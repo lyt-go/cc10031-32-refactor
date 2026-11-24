@@ -74,6 +74,9 @@ npm run dev
 - 全部模块共享`frontend/src/views/WorkbenchView.vue|tsx`和一套资源路由。
 - 每个模块仍保留独立`backend/app/services/<模块>.py`；纯前端保留
   `frontend/src/domain/<模块>.ts`，用于承载真实业务差异并维持36题位容量。
+- 归并/降采样数据产物的识别（文件命名、版本、完整产物认定）统一收敛在
+  `backend/app/services/aggregate_products.py`；序列索引与序列导出各自保留
+  登记归档与对外交付的产出形态，产物认定只此一份。
 - 列表接口统一返回 `{ items, total, page, size }`，动作接口统一返回 `{ ok, message }`。
 - 状态流转只允许在 `app/services` 里改，路由层不做业务判断。
 
